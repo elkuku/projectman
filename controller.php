@@ -32,5 +32,28 @@ class ProjectManController extends JController
 
 		parent::display();
 	}
+	
+	public function delete() 
+	{
+		$input = new JInput;
+		
+		$id = $input->get('id', 0, 'int');
+		
+		if( ! $id)
+		throw new Exception(__METHOD__.' - Empty id');
+		
+		$model = $this->getModel('Project');
+		
+		if( ! $model->delete($id))
+		{
+			JFactory::getApplication()->enqueueMessage($model->getError(), 'error');;
+		}
+		else
+		{
+			JFactory::getApplication()->enqueueMessage('Your project has been deleted');
+		}
+		
+		parent::display();
+	}
 
 }//class

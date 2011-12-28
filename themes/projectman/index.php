@@ -2,22 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<jdoc:include type="head" />
-		<style type="text/css">
-			div.cell {
-				float: left;
-				height: 320px;
-				width: 300px;
-				overflow: hide;
-			}
-			body {
-				background: #E5E5E5;
-			}
-			img {
-				background: #fff;
-				border: 1px solid #ddd;
-				padding: 5px;
-			}
-		</style>
+		<link href="themes/<?= $this->template ?>/css/<?= $this->template ?>.css" media="screen" rel="stylesheet" type="text/css" />
+
+		<script src="themes/<?= $this->template ?>/js/<?= $this->template ?>.js" type="text/javascript"></script>
+		<script src="themes/<?= $this->template ?>/js/mootools-core-1.4.2-full-nocompat.js" type="text/javascript"></script>
+		
 	</head>
 	<body>
 		<jdoc:include type="message" />

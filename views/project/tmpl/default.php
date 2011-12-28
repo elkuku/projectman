@@ -10,9 +10,11 @@
 	<input type=text name="path" id="path" size="40" value="<?= $this->item->path ?>" />
 
 	<label for="path">URL</label>
-	<input type=text name="url" id="url" size="40" value="<?= $this->item->path ?>" />
+	<input type=text name="url" id="url" size="40" value="<?= $this->item->url ?>" />
 
 	<input type="hidden" name="task" value="save" />
 
+	<input type="button" value="Cancel" onclick="window.location='index.php'" />
 	<input type="submit" value="Save" />
+	
 </form>

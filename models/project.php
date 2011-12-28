@@ -13,7 +13,7 @@ class ProjectManModelProject extends JModelAdmin
 	public function getForm($data = array(), $loadData = true)
 	{
 		// Get the form.
-		$form = $this->loadForm('com_banners.banner', 'project', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_projectman.project', 'project', array('control' => 'jform', 'load_data' => $loadData));
 		if (empty($form)) {
 			return false;
 		}
@@ -49,7 +49,6 @@ class ProjectManModelProject extends JModelAdmin
 		if( ! $table->check())
 		throw new Exception($table->getError());
 
-
 		// Store the data.
 		if( ! $table->store())
 		throw new Exception($table->getError());
@@ -60,9 +59,45 @@ class ProjectManModelProject extends JModelAdmin
 		{
 			$this->setState($this->getName() . '.id', $table->$pkName);
 		}
+		
 		$this->setState($this->getName() . '.new', $isNew);
 
 		return true;
-		;
 	}
-}
+	/**
+	 * Method to delete one or more records.
+	 *
+	 * @param   array  &$pks  An array of record primary keys.
+	 *
+	 * @return  boolean  True if successful, false if an error occurs.
+	 *
+	 * @since   11.1
+	 */
+	public function delete(&$pks)
+	{
+		// Initialise variables.
+		$pks = (array) $pks;
+		$table = $this->getTable();
+
+		// Iterate the items to delete each one.
+		foreach ($pks as $pk)
+		{
+			if($table->load($pk))
+			{
+				if( ! $table->delete($pk))
+				{
+					$this->setError($table->getError());
+					return false;
+				}
+			}
+			else
+			{
+				$this->setError($table->getError());
+				return false;
+			}
+		}//foreach
+
+		return true;
+	}//function
+
+}//class

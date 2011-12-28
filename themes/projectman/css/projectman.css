@@ -1,0 +1,69 @@
+@CHARSET "UTF-8";
+/**
+ * ProjectMan CSS
+ */
+body {
+	background: #eee;
+}
+
+ul.commands {
+	/*  
+	float: right;
+	*/
+	margin-bottom: 0;
+}
+
+ul.commands li {
+	display: inline;
+}
+
+a,a:visited {
+	color: blue;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.command {
+	border: 1px solid gray;
+	color: black;
+	text-decoration: none;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	border-radius: 7px;
+}
+
+a.command:hover {
+	background-color: #ffc;
+}
+
+div.projectLoc { /*
+	border: 1px dashed silver;
+	  */
+	
+}
+
+h3.projectLoc {
+	clear: both;
+	margin-top: 0;
+	padding-top: 0;
+	display: inline;
+}
+
+h3.newProject {
+	color: orange;
+}
+
+dd.error.message {
+	background-color: #ffb2b2;
+}
+
+dd.message {
+	background-color: #ccff99;
+}
+
+dd.warning.message {
+	background-color: #ffe599;
+}

@@ -58,12 +58,12 @@ class ProjectMan extends JApplicationWeb
 	{
 		$this->setUpDB();
 
-		$controller	= JController::getInstance('Projectman');
+// 		$controller = JController::getInstance('Projectman');
 
 		//-- Start an output buffer.
 		ob_start();
 
-		$controller->execute($this->input->get('task', '', 'cmd'));
+		JController::getInstance('Projectman')->execute($this->input->get('task', '', 'cmd'));
 
 		//-- Get the buffer output.
 		$output = ob_get_clean();
@@ -225,7 +225,7 @@ class ProjectMan extends JApplicationWeb
 	 */
 	public function getCfg($varname, $default = null)
 	{
-		return $this->config->get('' . $varname, $default);
+		return $this->config->get((string)$varname, $default);
 	}
 
 	/**
@@ -290,7 +290,9 @@ if( ! class_exists('JComponentHelper'))
 {
 	class JComponentHelper
 	{
-		public static function getParams() {
+		public static function getParams() 
+		{
+			//-- I am just a dummy :|
 			return new JRegistry;
 		}
 	}

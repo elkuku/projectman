@@ -1,5 +1,5 @@
 <?php
-class TableProjectMan extends JTable
+class TableProject extends JTable
 {
 	function __construct($db)
 	{
