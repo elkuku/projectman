@@ -4,8 +4,8 @@
 		<jdoc:include type="head" />
 		<link href="themes/<?= $this->template ?>/css/<?= $this->template ?>.css" media="screen" rel="stylesheet" type="text/css" />
 
-		<script src="themes/<?= $this->template ?>/js/<?= $this->template ?>.js" type="text/javascript"></script>
 		<script src="themes/<?= $this->template ?>/js/mootools-core-1.4.2-full-nocompat.js" type="text/javascript"></script>
+		<script src="themes/<?= $this->template ?>/js/<?= $this->template ?>.js" type="text/javascript"></script>
 		
 	</head>
 	<body>

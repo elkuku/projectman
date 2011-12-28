@@ -2,11 +2,7 @@
 jimport('joomla.application.component.modeladmin');
 
 /**
- * Banner model.
- *
- * @package		Joomla.Administrator
- * @subpackage	com_banners
- * @since		1.6
+ * Project model.
  */
 class ProjectManModelProject extends JModelAdmin
 {

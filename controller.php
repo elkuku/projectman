@@ -55,5 +55,24 @@ class ProjectManController extends JController
 		
 		parent::display();
 	}
+	
+	public function refresh() 
+	{
+		$input = new JInput;
+
+		$model = $this->getModel('Details');
+		
+		$id = $input->get('id', 0, 'int');
+		
+		$projectModel = $this->getModel('Project');
+		
+		$item = $projectModel->getItem();
+		
+// 		var_dump($item);
+
+		$model->refresh($item);
+		
+		parent::display();
+	}
 
 }//class

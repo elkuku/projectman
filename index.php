@@ -67,6 +67,15 @@ class ProjectMan extends JApplicationWeb
 
 		//-- Get the buffer output.
 		$output = ob_get_clean();
+		
+		$tmpl = $this->input->get('tmpl', '', 'cmd');
+		
+		if('component' == $tmpl)
+		{
+// 			echo $output;
+// 			$this->document->setType('raw');
+// 			return;
+		}
 
 		//-- Push the output into the document buffer.
 		$this->document->setBuffer($output, array('type' => 'component', 'name' => 'main'));
