@@ -1,0 +1,3 @@
+# ProjectMan ignores
+# database *files*
+/db/*
