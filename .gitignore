@@ -1,3 +1,4 @@
 # ProjectMan ignores
 # database *files*
 /db/*
+.idea/*
