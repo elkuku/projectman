@@ -11,5 +11,6 @@ CREATE TABLE #__projects_items (
   folder TEXT,
   vcs TEXT,
   branches TEXT,
-  status TEXT
+  status TEXT,
+  isjoomla INTEGER
 );

@@ -48,7 +48,7 @@ class ProjectManModelDetails extends JModelList
 		$excludes = explode(',', (string)$item->excludes);
 
 		$table = $this->getTable();
-			
+
 		foreach (new DirectoryIterator($item->path) as $fileInfo)
 		{
 			$name = $fileInfo->getFilename();
@@ -58,19 +58,25 @@ class ProjectManModelDetails extends JModelList
 			|| in_array($name, $excludes)
 			|| 0 === strpos($name, '.'))
 			continue;
-				
+
 			$table->reset();
 
 			$table->id = null;
 			$table->project_id = $item->id;
 			$table->folder = $name;
-				
+
 			if(is_dir($fileInfo->getPathname().'/.git'))
 			{
 				$table->vcs = 'git';
 				$table->branches = shell_exec('cd '.$fileInfo->getPathname().' && git branch');
+                $table->status = shell_exec('cd '.$fileInfo->getPathname().' && git status');
 			}
-				
+
+            if(is_dir($fileInfo->getPathname().'/administrator'))
+            {
+                //-- We assume Joomla!
+                $table->isjoomla = 1;
+            }
 
 			$table->store();
 		}//foreach

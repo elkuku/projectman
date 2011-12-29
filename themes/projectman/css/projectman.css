@@ -7,7 +7,7 @@ body {
 }
 
 ul.commands {
-	/*  
+	/*
 	float: right;
 	*/
 	margin-bottom: 0;
@@ -39,10 +39,8 @@ a.command:hover {
 	background-color: #ffc;
 }
 
-div.projectLoc { /*
-	border: 1px dashed silver;
-	  */
-	
+div.projectLoc {
+	border-bottom: 1px dashed silver;
 }
 
 h3.projectLoc {
@@ -66,4 +64,24 @@ dd.message {
 
 dd.warning.message {
 	background-color: #ffe599;
+}
+
+pre.git {
+    display: none;
+    background-color: black;
+    color: white;
+    padding: 0.3em;
+}
+
+.icon {
+    background-repeat: no-repeat;
+    padding-left: 18px;
+}
+
+.ico-joomla {
+    background-image: url("../images/favicon_t.ico");
+}
+
+.ico-git {
+    background-image: url("../images/icon_git.png");
 }

@@ -20,10 +20,11 @@ var ProjectManager = new Class({
 	    this.setOptions(options);
 	  },
 	  
-	  hello: function(whot) {
-		  alert('hihi '+whot);
-	  },
-	  
+        toggle: function(id) {
+            var container = document.id(id);
+            container.style.display = (container.style.display == 'block') ? 'none' : 'block';
+        },
+
 	  refreshProject: function(id) {
 		  var container = document.id('container-'+id);
 
