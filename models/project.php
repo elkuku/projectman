@@ -17,6 +17,15 @@ class ProjectManModelProject extends JModelAdmin
 		return $form;
 	}
 
+    /**
+     * Method to save the form data.
+     *
+     * @param   array  $data  The form data.
+     *
+     * @return boolean
+     *
+     * @throws Exception
+     */
 	public function save($data)
 	{
 		$table = $this->getTable();
@@ -55,7 +64,7 @@ class ProjectManModelProject extends JModelAdmin
 		{
 			$this->setState($this->getName() . '.id', $table->$pkName);
 		}
-		
+
 		$this->setState($this->getName() . '.new', $isNew);
 
 		return true;
